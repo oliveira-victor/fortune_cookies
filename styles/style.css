@@ -5,6 +5,10 @@
     font-family: 'Nunito Sans', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-size: 16pt;
     background-color: #702170;

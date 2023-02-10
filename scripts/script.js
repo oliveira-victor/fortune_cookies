@@ -22,6 +22,7 @@ let paperMsg = [
 ]
 let newMsg = ''
 let list = document.querySelector('.list')
+let cookie = document.querySelector('.cookie')
 
 function crack() {
     document.querySelector('.cookie').innerHTML = '<img src="./images/crack-open.gif" class="crack-cookie">'
@@ -30,6 +31,7 @@ function crack() {
     newMsg = paperMsg[result]
     const newPaper = `<div class="list-item bounce">${newMsg}</div>`
     list.insertAdjacentHTML('afterend', newPaper)
+    cookie.scrollIntoView()
 
     const myTimeout = setTimeout(reset, 2000)
 
