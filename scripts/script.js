@@ -9,14 +9,21 @@ let paperMsg = [
     "Love is the answer.",
     "You are beautiful."
 ]
-let tempMsg = ''
+let newMsg = ''
 let list = document.querySelector('.list')
 
 function crack() {
+    document.querySelector('.cookie').innerHTML = '<img src="./images/crack-open.gif" class="crack-cookie">'
     let length = paperMsg.length
     let result = Math.floor(Math.random() * length)
-    tempMsg = paperMsg[result]
-    const newPaper = `<div class="list-item">${tempMsg}</div>`
+    newMsg = paperMsg[result]
+    const newPaper = `<div class="list-item bounce">${newMsg}</div>`
     list.insertAdjacentHTML('afterend', newPaper)
-    tempMsg = ''
+
+    const myTimeout = setTimeout(reset, 2000)
+
+    function reset() {
+    newMsg = ''
+    document.querySelector('.cookie').innerHTML = '<img src="./images/cookie.gif" class="appear" onclick="crack()" alt="Cookie illsutration">'
+    }
 }
